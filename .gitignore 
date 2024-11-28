@@ -1,0 +1,25 @@
+# Environnement virtuel
+venv/
+.env
+
+# Fichiers de configuration IDE
+.vscode/
+.idea/
+
+# Fichiers compilés Python
+__pycache__/
+*.py[cod]
+
+# Fichiers de log
+*.log
+
+# Fichiers de base de données temporaires
+*.sqlite3
+*.db
+
+# Fichiers générés par le système
+*.DS_Store
+Thumbs.db
+
+# Dépendances installées
+*.egg-info/
