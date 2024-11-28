@@ -1,6 +1,6 @@
 # **PokeValue**
 
-PokeValue est une application permettant de rechercher et d’évaluer des cartes Pokémon via un backend Flask et une interface utilisateur Streamlit.
+* [ ] PokeValue est une application permettant de rechercher et d’évaluer des cartes Pokémon via un backend Flask et une interface utilisateur Streamlit.
 
 ## **Aperçu du projet**
 
@@ -85,4 +85,4 @@ Depuis le dossier racine du projet :
 
 Dans une nouvelle console, exécute :
 
-`streamlit run frontend/front_app.py`
+`streamlit run app/frontend/front_app.py`
