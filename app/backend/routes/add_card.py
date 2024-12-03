@@ -7,11 +7,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import sqlite3
 
-backend_routes = Blueprint("backend", __name__)
+add_card_routes = Blueprint("add_card", __name__)
 
 
-@backend_routes.route("/search", methods=["POST"])
-def search_card():
+@add_card_routes.route("/add_card", methods=["POST"])
+def add_card():
     data = request.json
     pokemon_name = data.get("pokemon_name")
     card_number = data.get("card_number")
@@ -64,7 +64,7 @@ def search_card():
         conn.commit()
         conn.close()
 
-        return jsonify({"image_url": image_url})
+        return jsonify({"image_url": image_url, "message": "Card added successfully!"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     finally:
