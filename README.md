@@ -1,6 +1,8 @@
 # **PokeValue**
 
-* [ ] PokeValue est une application permettant de rechercher et d’évaluer des cartes Pokémon via un backend Flask et une interface utilisateur Streamlit.
+PokeValue est une application permettant de rechercher et d’évaluer des cartes Pokémon via un backend Flask et une interface utilisateur Streamlit.
+
+---
 
 ## **Aperçu du projet**
 
@@ -22,23 +24,29 @@ PokeValue est une application composée de deux parties :
 7. **Suivi des ouvertures de boosters :** Enregistrer les résultats des ouvertures.
 8. **Comparer aux taux officiels :** Vérifier la cohérence entre les probabilités officielles et les données collectées.
 
+---
+
 ## **Structure du projet**
 
 Voici l’arborescence du projet avec une brève description des fichiers et dossiers :
 
 PokeValue/
-├── app/
-│ ├──  **init** .py # Initialisation principale de l'application Flask
-│ ├── backend/ # Contient la logique backend
-│ │ ├── models.py # Gestion de la base de données SQLite
-│ │ ├── routes.py # Déclaration des routes Flask
-├── frontend/
-│ ├── front_app.py # Interface utilisateur Streamlit
-├── database.db # Fichier SQLite pour les données persistantes
-├── requirements.txt # Liste des dépendances nécessaires
-├── README.md # Documentation du projet
-├── .gitignore # Fichiers à ignorer par Git
-├── venv/ # Environnement virtuel Python
+├── .venv/               # Environnement virtuel Python
+├── .vscode/             # Paramètres spécifiques à VS Code
+├── app/                 # Répertoire principal de l'application
+│   ├── backend/         # Contient la logique backend
+│   │   ├── models.py    # Gestion de la base de données
+│   │   ├── routes.py    # Déclaration des routes Flask
+│   │   ├── utils.py     # Fonctions utilitaires pour le backend
+│   ├── frontend/        # Contient la logique frontend
+│   │   ├── __init__.py  # Fichier d'initialisation pour le frontend
+│   │   ├── front_app.py # Interface utilisateur Streamlit
+├── .gitignore           # Fichiers à ignorer par Git
+├── database.db          # Base de données SQLite pour le projet
+├── README.md            # Documentation du projet
+├── requirements.txt     # Liste des dépendances nécessaires
+
+---
 
 ## **Prérequis**
 
@@ -49,29 +57,49 @@ Avant de commencer, assure-toi d’avoir les éléments suivants installés sur 
 3. **Google Chrome** (utilisé par Selenium)
 4. **Chromedriver** (version correspondant à celle de Chrome installée)
 
+---
+
 ## **Installation**
 
-**Étape 1 : Cloner le dépôt**
+### **Étape 1 : Cloner le dépôt**
 
 Clone le projet depuis GitHub et place-toi dans le répertoire du projet :
 
-`git clone https://github.com/Etens/PokeValue.git`
+```bash
+git clone https://github.com/Etens/PokeValue.git
+```
 
-`cd PokeValue`
+```bash
+cd PokeValue
+```
 
-**Étape 2 : Créer un environnement virtuel**
+### **Étape 2 : Vérifier ou configurer un environnement virtuel**
 
-Crée et active un environnement virtuel Python :
+*Optionnel : Vérifier si un venv existe déjà*
+Si un environnement virtuel est déjà configuré, active-le directement :
 
-`python -m venv venv`
+```bash
+source venv/bin/activate
+```
 
-`python -m flask --app app run`
+Si aucun venv n’existe
 
-**Étape 3 : Installer les dépendances**
+Crée un nouvel environnement virtuel avec la commande suivante, puis active-le :
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### **Étape 3 : Installer les dépendances**
 
 Installe toutes les dépendances nécessaires :
 
-`pip install -r requirements.txt`
+```bash
+pip install -r requirements.txt
+```
+
+---
 
 ## Exécution
 
@@ -79,10 +107,14 @@ Installe toutes les dépendances nécessaires :
 
 Depuis le dossier racine du projet :
 
-`python -m flask --app app run`
+```bash
+python -m flask --app app run
+```
 
 **Lancer le frontend Streamlit**
 
 Dans une nouvelle console, exécute :
 
-`streamlit run app/frontend/front_app.py`
+```bash
+streamlit run app/frontend/front_app.py
+```
