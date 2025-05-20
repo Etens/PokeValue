@@ -1,0 +1,51 @@
+[tool.ruff]
+line-length = 200
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".git",
+    ".git-rewrite",
+    ".mypy_cache",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".venv",
+    ".vscode",
+    ".idea",
+    "__pypackages__",
+    "_build",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+    "ars-common-bootstrap"
+]
+
+[tool.ruff.lint]
+# Ignore E501: Line too long error
+# Ignore C901: function is too complex
+ignore = ["E501", "C901" ]
+select = ["C", "E", "F", "I", "W", "UP", "B", "Q"]
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
+known-third-party = ["fastapi", "pydantic", "starlette"]
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+[tool.ruff.lint.pyupgrade]
+# Preserve types, even if a file imports `from __future__ import annotations`.
+keep-runtime-typing = true

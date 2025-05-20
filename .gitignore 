@@ -1,6 +1,7 @@
 # Environnement virtuel
 .venv/
 .env
+.github/
 
 # Fichiers de configuration IDE
 .vscode/

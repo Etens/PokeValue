@@ -35,5 +35,15 @@ def init_db():
         )
         """
     )
+    try:
+        cursor.execute("ALTER TABLE searches ADD COLUMN price TEXT")
+    except sqlite3.OperationalError:
+        pass
+
+    try:
+        cursor.execute("ALTER TABLE collections ADD COLUMN price TEXT")
+    except sqlite3.OperationalError:
+        pass
+
     conn.commit()
     conn.close()
